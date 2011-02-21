@@ -36,7 +36,7 @@ import javax.transaction.UserTransaction;
 
 import org.jboss.seam.examples.booking.model.Hotel;
 import org.jboss.seam.examples.booking.model.User;
-import org.slf4j.Logger;
+import org.jboss.logging.Logger;
 
 /**
  * @author <a href="mailto:lincolnbaxter@gmail.com">Lincoln Baxter, III</a>

@@ -32,7 +32,7 @@ import org.jboss.seam.examples.booking.account.Authenticated;
 import org.jboss.seam.examples.booking.i18n.DefaultBundleKey;
 import org.jboss.seam.examples.booking.model.User;
 import org.jboss.seam.international.status.Messages;
-import org.slf4j.Logger;
+import org.jboss.logging.Logger;
 
 /**
  * This implementation of <strong>Authenticator</strong> cross references the

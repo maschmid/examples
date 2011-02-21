@@ -29,7 +29,7 @@ import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.ObjectMessage;
 import org.jboss.seam.examples.booking.model.Booking;
-import org.slf4j.Logger;
+import org.jboss.logging.Logger;
 
 //@MessageDriven(activationConfig = {
 //      @ActivationConfigProperty(propertyName = "destination", propertyValue = "jms/BookingTopic"),

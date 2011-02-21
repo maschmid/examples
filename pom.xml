@@ -22,7 +22,7 @@
    <url>http://www.seamframework.org</url>
 
    <properties>
-      <seam.version>3.0.0.b01</seam.version>
+      <seam.version>3.0.0.b09</seam.version>
    </properties>
 
    <developers>
@@ -80,7 +80,7 @@
       <dependencies>
          <dependency>
             <groupId>org.jboss.seam</groupId>
-            <artifactId>seam</artifactId>
+            <artifactId>seam-bom</artifactId>
             <version>${seam.version}</version>
             <scope>import</scope>
             <type>pom</type>

@@ -49,7 +49,7 @@ import org.jboss.seam.examples.booking.model.User;
 import org.jboss.seam.examples.booking.model.User_;
 import org.jboss.seam.examples.booking.security.Identity;
 import org.jboss.seam.international.status.Messages;
-import org.slf4j.Logger;
+import org.jboss.logging.Logger;
 
 /**
  * The booking history exposes the current users existing bookings
@@ -102,20 +102,20 @@ public class BookingHistory
 
    public void cancelBooking(final Booking selectedBooking)
    {
-      log.info("Canceling booking {0} for {1}", selectedBooking.getId(), currentUserInstance.get().getName());
+      log.infov("Canceling booking {0} for {1}", selectedBooking.getId(), currentUserInstance.get().getName());
       Booking booking = entityManager.find(Booking.class, selectedBooking.getId());
       if (booking != null)
       {
          entityManager.remove(booking);
          messages.info(new DefaultBundleKey("booking_canceled"))
-               .textDefault("The booking at the {0} on {1} has been canceled.")
-               .textParams(selectedBooking.getHotel().getName(),
+               .defaults("The booking at the {0} on {1} has been canceled.")
+               .params(selectedBooking.getHotel().getName(),
                      DateFormat.getDateInstance(SimpleDateFormat.MEDIUM).format(selectedBooking.getCheckinDate()));
       }
       else
       {
          messages.info(new DefaultBundleKey("booking_doesNotExist"))
-               .textDefault("Our records indicate that the booking you selected has already been canceled.");
+               .defaults("Our records indicate that the booking you selected has already been canceled.");
       }
 
       bookingsForUser.remove(selectedBooking);

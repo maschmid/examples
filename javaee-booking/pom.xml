@@ -30,7 +30,9 @@
       <jboss-as-client.version>6.0.0.20100721-M4</jboss-as-client.version>
       <jboss-javaee6-spec.version>1.0.0.Beta7</jboss-javaee6-spec.version>
       <jboss-server-manager.version>1.0.3.GA</jboss-server-manager.version>
-      <seam-faces.version>3.0.0.Alpha3</seam-faces.version>
+      <seam-faces.version>3.0.0-SNAPSHOT</seam-faces.version>
+      <seam-config.version>3.0.0-SNAPSHOT</seam-config.version>
+      <seam-international.version>3.0.0-SNAPSHOT</seam-international.version>
    </properties>
 
    <repositories>
@@ -92,15 +94,17 @@
       </dependency>
 
       <dependency>
-         <groupId>org.jboss.seam.xml</groupId>
-         <artifactId>seam-xml-config</artifactId>
-         <exclusions>
-            <exclusion>
-               <groupId>javax.enterprise</groupId>
-               <artifactId>cdi-api</artifactId>
-            </exclusion>
-         </exclusions>
+         <groupId>org.jboss.seam.config</groupId>
+         <artifactId>seam-config-xml</artifactId>
+         <version>${seam-config.version}</version>
       </dependency>
+
+      <dependency>
+         <groupId>org.jboss.seam.international</groupId>
+         <artifactId>seam-international</artifactId>
+         <version>${seam-international.version}</version>
+      </dependency>
+
 
       <!-- Bean Validation Implementation; provides portable constraints @NotEmpty, @Email and @Url -->
       <!-- Hibernate Validator is the only JSR-303 implementation at the moment, so we can assume it's provided -->
@@ -137,6 +141,12 @@
          <artifactId>weld-core</artifactId>
          <version>1.0.1-Final</version>
          <scope>test</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>com.ocpsoft</groupId>
+        <artifactId>ocpsoft-pretty-time</artifactId>
+        <version>1.0.6</version>
       </dependency>
 
       <!--
@@ -240,11 +250,11 @@
                <type>pom</type>
                <scope>provided</scope>
             </dependency>
-            <dependency>
+            <!--<dependency>
                <groupId>org.slf4j</groupId>
                <artifactId>slf4j-api</artifactId>
                <scope>provided</scope>
-            </dependency>
+            </dependency>-->
          </dependencies>
 			<build>
 				<plugins>

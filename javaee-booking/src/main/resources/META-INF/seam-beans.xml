@@ -21,14 +21,20 @@ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
 -->
 <beans xmlns="http://java.sun.com/xml/ns/javaee"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xmlns:s="urn:java:seam:core" 
+   xmlns:s="urn:java:ee" 
    xmlns:i18n="urn:java:org.jboss.seam.international.locale"
    xsi:schemaLocation="
       http://java.sun.com/xml/ns/javaee 
       http://docs.jboss.org/cdi/beans_1_0.xsd">
 
+  <s:String>
+    <s:Produces/>
+    <i18n:DefaultLocale />
+    <s:value>en_US</s:value>
+  </s:String>
+
    <!-- Try out i18n support by changing defaultLocaleKey to de -->
-   <i18n:DefaultLocaleProducer defaultLocaleKey="en_US">
-      <s:specializes />
-   </i18n:DefaultLocaleProducer>
+   <!--<i18n:DefaultLocaleProducer defaultLocaleKey="en_US">
+      <s:modifies />
+   </i18n:DefaultLocaleProducer>-->
 </beans>

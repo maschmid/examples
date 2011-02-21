@@ -39,7 +39,7 @@ import javax.persistence.criteria.Root;
 import org.jboss.seam.examples.booking.model.Hotel;
 import org.jboss.seam.examples.booking.model.Hotel_;
 import org.jboss.seam.international.status.builder.TemplateMessage;
-import org.slf4j.Logger;
+import org.jboss.logging.Logger;
 
 @Named
 @Stateful

@@ -55,7 +55,7 @@ public class ConfirmPasswordValidator implements Validator
    {
       if ((newPassword != null) && !newPassword.equals(confirmPassword))
       {
-         throw new ValidatorException(new FacesMessage(messageBuilder.text(new DefaultBundleKey("account_passwordsDoNotMatch")).build().getText()));
+         throw new ValidatorException(new FacesMessage(messageBuilder.key(new DefaultBundleKey("account_passwordsDoNotMatch")).build().getText()));
       }
    }
 

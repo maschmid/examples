@@ -47,7 +47,7 @@ import org.jboss.seam.faces.context.conversation.Begin;
 import org.jboss.seam.faces.context.conversation.End;
 import org.jboss.seam.international.status.Messages;
 import org.jboss.seam.international.status.builder.TemplateMessage;
-import org.slf4j.Logger;
+import org.jboss.logging.Logger;
 
 import com.ocpsoft.pretty.time.PrettyTime;
 
@@ -106,7 +106,7 @@ public class BookingAgent
       // for demo convenience
       booking.setCreditCardNumber("1111222233334444");
 
-      messages.info(new DefaultBundleKey("booking_initiated")).textDefault("You've initiated a booking at the {0}.").textParams(booking.getHotel().getName());
+      messages.info(new DefaultBundleKey("booking_initiated")).defaults("You've initiated a booking at the {0}.").params(booking.getHotel().getName());
    }
 
    public void validate()
@@ -133,7 +133,7 @@ public class BookingAgent
    public void onBookingComplete(@Observes(during = TransactionPhase.AFTER_SUCCESS) @Confirmed final Booking booking)
    {
       log.info(messageBuilder.get().text("New booking at the {0} confirmed for {1}").textParams(booking.getHotel().getName(), booking.getUser().getName()).build().getText());
-      messages.info(new DefaultBundleKey("booking_confirmed")).textDefault("You're booked to stay at the {0} {1}.").textParams(booking.getHotel().getName(), new PrettyTime(locale).format(booking.getCheckinDate()));
+      messages.info(new DefaultBundleKey("booking_confirmed")).defaults("You're booked to stay at the {0} {1}.").params(booking.getHotel().getName(), new PrettyTime(locale).format(booking.getCheckinDate()));
    }
 
    @Produces @ConversationScoped @Named

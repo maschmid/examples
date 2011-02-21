@@ -58,7 +58,7 @@ public class PasswordManager
    public void changePassword()
    {
       em.merge(user);
-      messages.info(new DefaultBundleKey("account_passwordChanged")).textDefault("Password successfully updated.");
+      messages.info(new DefaultBundleKey("account_passwordChanged")).defaults("Password successfully updated.");
       changed = true;
    }
 
