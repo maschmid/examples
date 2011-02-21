@@ -22,7 +22,7 @@
    <url>http://www.seamframework.org</url>
 
    <properties>
-      <seam.version>3.0.0.b09</seam.version>
+      <seam.version>3.0.0-SNAPSHOT</seam.version>
    </properties>
 
    <developers>
