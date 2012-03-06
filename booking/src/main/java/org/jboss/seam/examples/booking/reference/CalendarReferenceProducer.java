@@ -16,6 +16,7 @@
  */
 package org.jboss.seam.examples.booking.reference;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -33,7 +34,7 @@ import javax.inject.Named;
  *
  * @author <a href="http://community.jboss.org/people/dan.j.allen">Dan Allen</a>
  */
-public class CalendarReferenceProducer {
+public class CalendarReferenceProducer implements Serializable {
 
     @Produces
     @Named

@@ -16,6 +16,8 @@
  */
 package org.jboss.seam.examples.booking.account;
 
+import java.io.Serializable;
+
 import javax.ejb.Stateful;
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.event.Observes;
@@ -23,6 +25,7 @@ import javax.enterprise.inject.Produces;
 import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
 
+import org.jboss.ejb3.annotation.Clustered;
 import org.jboss.seam.examples.booking.model.User;
 
 /**
@@ -32,7 +35,8 @@ import org.jboss.seam.examples.booking.model.User;
  */
 @Stateful
 @SessionScoped
-public class CurrentUserManager {
+@Clustered
+public class CurrentUserManager implements Serializable {
     private User currentUser;
 
     @Produces

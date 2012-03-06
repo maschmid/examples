@@ -16,6 +16,7 @@
  */
 package org.jboss.seam.examples.booking.reference;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -32,7 +33,7 @@ import org.jboss.seam.examples.booking.model.CreditCardType;
  *
  * @author <a href="http://community.jboss.org/people/dan.j.allen">Dan Allen</a>
  */
-public class CreditCardReferenceProducer {
+public class CreditCardReferenceProducer implements Serializable {
     @Produces
     @Named
     @ConversationScoped

@@ -16,6 +16,7 @@
  */
 package org.jboss.seam.examples.booking.booking;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -36,6 +37,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Root;
 
+import org.jboss.ejb3.annotation.Clustered;
 import org.jboss.solder.logging.Logger;
 import org.jboss.seam.examples.booking.account.Authenticated;
 import org.jboss.seam.examples.booking.i18n.DefaultBundleKey;
@@ -53,8 +55,9 @@ import org.jboss.seam.security.Identity;
  */
 @Stateful
 @SessionScoped
+@Clustered
 @Named
-public class BookingHistory {
+public class BookingHistory implements Serializable {
     @Inject
     private Logger log;
 

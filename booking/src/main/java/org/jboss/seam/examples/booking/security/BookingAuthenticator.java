@@ -16,6 +16,8 @@
  */
 package org.jboss.seam.examples.booking.security;
 
+import java.io.Serializable;
+
 import javax.ejb.Stateful;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
@@ -23,6 +25,7 @@ import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.jboss.ejb3.annotation.Clustered;
 import org.jboss.seam.examples.booking.account.Authenticated;
 import org.jboss.seam.examples.booking.i18n.DefaultBundleKey;
 import org.jboss.seam.examples.booking.model.User;
@@ -40,8 +43,9 @@ import org.picketlink.idm.impl.api.model.SimpleUser;
  * @author <a href="http://community.jboss.org/people/spinner)">Jose Rodolfo freitas</a>
  */
 @Stateful
+@Clustered
 @Named("bookingAuthenticator")
-public class BookingAuthenticator extends BaseAuthenticator implements Authenticator {
+public class BookingAuthenticator extends BaseAuthenticator implements Authenticator, Serializable {
 
     @Inject
     private Logger log;

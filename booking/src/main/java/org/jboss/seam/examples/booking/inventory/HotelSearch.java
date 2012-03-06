@@ -16,6 +16,7 @@
  */
 package org.jboss.seam.examples.booking.inventory;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +32,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
+import org.jboss.ejb3.annotation.Clustered;
 import org.jboss.solder.logging.Logger;
 import org.jboss.seam.examples.booking.model.Hotel;
 import org.jboss.seam.examples.booking.model.Hotel_;
@@ -42,7 +44,8 @@ import org.jboss.seam.international.status.builder.TemplateMessage;
 @Named
 @Stateful
 @SessionScoped
-public class HotelSearch {
+@Clustered
+public class HotelSearch implements Serializable {
 
     @Inject
     private Logger log;
