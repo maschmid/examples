@@ -16,8 +16,6 @@
  */
 package org.jboss.seam.examples.booking.security;
 
-import java.io.Serializable;
-
 import javax.ejb.Stateful;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
@@ -45,7 +43,7 @@ import org.picketlink.idm.impl.api.model.SimpleUser;
 @Stateful
 @Clustered
 @Named("bookingAuthenticator")
-public class BookingAuthenticator extends BaseAuthenticator implements Authenticator, Serializable {
+public class BookingAuthenticator extends BaseAuthenticator implements Authenticator {
 
     @Inject
     private Logger log;

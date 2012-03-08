@@ -16,7 +16,6 @@
  */
 package org.jboss.seam.examples.booking.inventory;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +44,7 @@ import org.jboss.seam.international.status.builder.TemplateMessage;
 @Stateful
 @SessionScoped
 @Clustered
-public class HotelSearch implements Serializable {
+public class HotelSearch {
 
     @Inject
     private Logger log;

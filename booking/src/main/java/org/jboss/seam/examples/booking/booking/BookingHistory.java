@@ -16,7 +16,6 @@
  */
 package org.jboss.seam.examples.booking.booking;
 
-import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -57,7 +56,7 @@ import org.jboss.seam.security.Identity;
 @SessionScoped
 @Clustered
 @Named
-public class BookingHistory implements Serializable {
+public class BookingHistory {
     @Inject
     private Logger log;
 
