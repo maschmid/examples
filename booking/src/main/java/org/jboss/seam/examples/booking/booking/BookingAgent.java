@@ -34,6 +34,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import com.ocpsoft.pretty.time.PrettyTime;
+
+import org.jboss.ejb3.annotation.Clustered;
 import org.jboss.seam.examples.booking.account.Authenticated;
 import org.jboss.seam.examples.booking.i18n.DefaultBundleKey;
 import org.jboss.seam.examples.booking.log.BookingLog;
@@ -53,6 +55,7 @@ import static javax.persistence.PersistenceContextType.EXTENDED;
  * @author <a href="http://community.jboss.org/people/dan.j.allen">Dan Allen</a>
  */
 @Stateful
+@Clustered
 @ConversationScoped
 @Named
 @Interceptors(ConversationBoundaryInterceptor.class) // not necessary, this is a temporary workaround for GLASSFISH-17184
